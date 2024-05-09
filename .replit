@@ -1,0 +1,18 @@
+modules = ["nodejs-20:v8-20230920-bd784b9"]
+hidden = [".config", "package-lock.json", "pnpm-lock.yaml"]
+run = "pnpm test"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "pnpm-lock.yaml"]
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["sh", "-c", "pnpm test"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
